@@ -1,18 +1,3 @@
-//const numeroIngresado = Number(prompt('Ingrese un numero'))
-//let numero1=0;
-//let numero2=1
-//let numero3=0
-
-//for(let contador=0; contador<40; contador++){
-   
-  //  if(contador% 2===0){
-        //console.log(contador +"Numero!!")
-    //    continue
-    //}
-    //console.log(contador)
-//} 
-
-//console.log("Fin del programa")
 
 function holaMundo(){
             alert("Hola Mundo!")
