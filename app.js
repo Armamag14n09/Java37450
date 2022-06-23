@@ -101,7 +101,7 @@ textElement.className = "text bold blue"
 const listItems = document.getElementsByClassName('list-item')
 
 console.log(listItems)
-*/
+
 
 const usuarios = ["Francisco", "Luis", "Marco","Enzo"]
 
@@ -114,7 +114,8 @@ usuarios.forEach((usuarios) =>{
 
     usuariosList.append(li)
 
-})
+})*/
+
 
 const productos = [
     {
@@ -162,10 +163,55 @@ div.innerHTML = `<h4>${producto.nombre}</h4>
 
 productsContainer.append(div)
 
+//eventos
+
+const btn1 = document.querySelector('#boton1')
+const btn2 = document.querySelector('#boton2')
+const btn3 = document.querySelector('#boton3')
+
+btn1.addEventListener('click', () =>{
+    console.log("Boton clickeando")
+} )
+btn2.addEventListener('mouseover', () => {
+    console.log("Hover sobre el botón 1")
+} )
+
+btn3.onclick = () => {
+    console.log("Botón 2 clickeando")
+}
+
+const randomColor = () => {
+    return Math.round( Math.random() * 255 )
+}
+
+const titulo2 = document.querySelector('#titulo2')
+
+titulo2.addEventListener('click', () => {
+    console.log("titulo")
+    const red = randomColor()
+    const green = randomColor()
+    const blue = randomColor()
+    titulo2.style.color = `rgb(${red}, ${green}, ${blue})`
+    
+
+})
+
+const inputNombre = document.querySelector('#input-nombre')
+const inputDireccion = document.querySelector('#input-direccion')
+const btnEnviar = document.querySelector('#btn-enviar')
+
+//console.log(inputNombre)
+
+btnEnviar.addEventListener('click',()=>{
+    console.log(inputNombre.value)
+    console.log(inputDireccion.value)
 
 
+})
 
-
+inputNombre.addEventListener('change', () => {
+    
+})
 
 /*
 const li =document.createElement('li')
