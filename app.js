@@ -1,4 +1,4 @@
-/*
+
 function holaMundo(){
     alert("Hola Mundo!")
 }
@@ -14,21 +14,32 @@ function usuario(){
          }
 }
 usuario()
+localStorage.removeItem('user')
+//function infoUsuario(){
+let usuario1
+const usuario1LS = localStorage.getItem('user')
+if (usuario1LS){
+    usuario1 = usuario1LS
+} else{
+    
 
-function infoUsuario(){
-
-let nombre= prompt('Ingrese su Nombre')
+//let nombre= prompt('Ingrese su Nombre')
+    usuario1 = prompt('Ingrese su Nombre')
+    localStorage.setItem("user", usuario1)
+//let curso= prompt('Ingrese su Curso')
+const title = document.querySelector("#titulo-usuario")
+title.innerText = `Bienvenido: ${usuario1}`
+console.log(usuario1LS)
 let edad= prompt('Ingrese su Edad:')
-let curso= prompt('Ingrese su Curso')
 evaluarEdad(edad)
 
 let producto1= prompt('Cuantidad de Mouses')
 let producto2= prompt('Cuantidad de Teclados')
 let producto3= prompt('Cuantidad de Monitores')
-console.log("Nombre: " + nombre)
+console.log("Nombre: " + usuario1)
 console.log("Edad: " + edad + " años")
 
-console.log("Cursando: " + curso)
+/*console.log("Cursando: " + curso)*/
 console.log("Mouse: "+ producto1)
 console.log("Teclados: " + producto2)
 console.log("Monitores: " + producto3)
@@ -85,11 +96,11 @@ function agregarProducto(){
 //productos.push( { id:id, nombre:nombre, precio:precio })
    
 console.log(productos)  
-infoUsuario()
+//infoUsuario()
 agregarProducto()
-*/
 
-/*const titulo = document.getElementById("titulo")
+
+const titulo = document.getElementById("titulo")
 titulo.className = "green font-big"
 const textElement = document.getElementById("texto")
 
@@ -114,10 +125,10 @@ usuarios.forEach((usuarios) =>{
 
     usuariosList.append(li)
 
-})*/
+})
+//localStorage.removeItem('user')
 
-
-const productos = [
+const productos2 = [
     {
         id: 1,
         nombre: "Teclado RGB",
@@ -143,6 +154,13 @@ const productos = [
         img: "https://m.media-amazon.com/images/I/619MHX-XijL._AC_SL1000_.jpg" 
     }
 ]
+console.log(productos2)
+
+const productos2JSON =JSON.stringify(productos2)
+console.log(productos2JSON)
+console.log(typeof productos2JSON)
+
+localStorage.setItem('productos2', productos2JSON)
 
 const producto ={
         id: 4,
@@ -162,6 +180,8 @@ div.innerHTML = `<h4>${producto.nombre}</h4>
                 `
 
 productsContainer.append(div)
+
+
 
 //eventos
 
@@ -202,7 +222,7 @@ const btnEnviar = document.querySelector('#btn-enviar')
 
 //console.log(inputNombre)
 
-btnEnviar.addEventListener('click',()=>{
+btnEnviar.addEventListener('click', () => {
     console.log(inputNombre.value)
     console.log(inputDireccion.value)
 
