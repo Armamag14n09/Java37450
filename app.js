@@ -128,7 +128,7 @@ usuarios.forEach((usuarios) =>{
 })
 //localStorage.removeItem('user')
 
-const productos2 = [
+const producto = [
     {
         id: 1,
         nombre: "Teclado RGB",
@@ -154,20 +154,22 @@ const productos2 = [
         img: "https://m.media-amazon.com/images/I/619MHX-XijL._AC_SL1000_.jpg" 
     }
 ]
-console.log(productos2)
 
-const productos2JSON =JSON.stringify(productos2)
-console.log(productos2JSON)
-console.log(typeof productos2JSON)
 
-localStorage.setItem('productos2', productos2JSON)
 
-const producto ={
+
+const productos2 ={
         id: 4,
         nombre: "MosePad RGB",
         precio: 550,
         img: "https://via.placeholder.com/250" 
 }
+const productos2JSON = JSON.stringify(productos2)
+console.log(productos2JSON)
+console.log(typeof productos2JSON)
+
+localStorage.setItem('productos2', productos2JSON)
+console.log(productos2)
 
 const productsContainer = document.getElementById('products-container')
 
@@ -237,7 +239,5 @@ inputNombre.addEventListener('change', () => {
 const li =document.createElement('li')
 li.className="red"
 li.innerText = usuarios[0]
-
 usuariosList.append(li)
-
 */
