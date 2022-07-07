@@ -60,3 +60,32 @@ const usuario2 = {
 console.log( usuario2?.años?.react || "Ingrese su edad")
 console.log( usuario2?.años?.edad || "Ingrese su edad")
 }
+
+const btnSwall = document.querySelector('#enviar')
+
+btnSwall.addEventListener('click', () => {
+
+swal.fire({
+    title: 'Antes de enviar verifique sus datos?',
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: 'Enviar',
+    denyButtonText: `Corregir`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      Swal.fire('Enviado!', '', 'success')
+    } else if (result.isDenied) {
+      Swal.fire('No se a enviado los datos', '', 'info')
+    }
+  })
+})
+const btnToast = document.querySelector('#toast')
+
+btnToast.addEventListener('click', () => {
+
+Toastify({
+    text: 'Bienvenido',
+    duration: 2500
+}) .showToast()
+})
