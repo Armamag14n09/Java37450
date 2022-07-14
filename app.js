@@ -1,4 +1,4 @@
-
+/*
 function usuario(){ 
     let usuario= prompt("Intodusca el password del Admin")
     while (true){
@@ -72,7 +72,7 @@ swal.fire({
     confirmButtonText: 'Enviar',
     denyButtonText: `Corregir`,
   }).then((result) => {
-    /* Read more about isConfirmed, isDenied below */
+    // Read more about isConfirmed, isDenied below 
     if (result.isConfirmed) {
       Swal.fire('Enviado!', '', 'success')
     } else if (result.isDenied) {
@@ -89,3 +89,36 @@ Toastify({
     duration: 2500
 }) .showToast()
 })
+*/
+
+        // query param "q" = String
+const url1 = 'https://www.coderhouse.com/search?q=luis&limit=20'
+
+const busqueda = 'pikachu'
+const url2 =`https://pokeapi.co/api/v2/pokemon/${busqueda}`
+
+console.log(url2)
+
+const listado = document.querySelector('#listado')
+
+fetch('https://jsonplaceholder.typicode.com/posts' )
+    .then((resp) => resp.json())
+    .then((data) => {
+    
+        data.forEach(post => {
+            
+            const {title, body} = post
+
+        listado.innerHTML += `
+        <li>   
+            <h4>${title}</h4>
+            <p>${body}</p>
+            <hr>
+        </li>    
+        `     
+        })
+    
+    })
+    .catch((error) =>{
+        console.log(error)
+    })
